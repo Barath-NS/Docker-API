@@ -11,4 +11,4 @@ COPY myapi.py myapi.py
 RUN pip install -r requirements.txt
 
 # Run the Python script when the container starts
- CMD ["uvicorn", "myapi:app", "--host", "0.0.0.0", "--port", "80"]
+ CMD ["uvicorn", "myapi:app", "--host", "0.0.0.0", "--port", "8000"]
