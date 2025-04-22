@@ -18,7 +18,7 @@ jobs:
         uses: docker/login-action@v3.4.0
         with:
           username: barath2005
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: nsbking@123
           ecr: false
           logout: true
 
