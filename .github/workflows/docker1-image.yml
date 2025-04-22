@@ -22,8 +22,9 @@ jobs:
           ecr: false
           logout: true
 
-      - name: Build the Docker image 
+      - name: Build the Docker image
         run: docker build . --file Dockerfile --tag Barath-NS/docker-demo:1.0
 
       - name: Push the Docker image
         run: docker push Barath-NS/docker-demo:1.0
+
