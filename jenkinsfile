@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Barath-NS/Docker-API.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    dir('api-demo') {
+                        sh 'docker build -t fastapi-demo .'
+                    }
+                }
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    sh 'docker run -d -p 8000:8000 --name fastapi-app fastapi-demo'
+                }
+            }
+        }
+    }
+}
+
