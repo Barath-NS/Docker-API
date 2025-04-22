@@ -1,14 +1,10 @@
-FROM python:3.11-slim
+FROM python:3.9-slim
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the necessary files into the container
-COPY requirements.txt requirements.txt
-COPY myapi.py myapi.py
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install the required Python libraries
-RUN pip install -r requirements.txt
+COPY . .
 
-# Run the Python script when the container starts
- CMD ["uvicorn", "myapi:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
