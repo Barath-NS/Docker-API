@@ -26,5 +26,6 @@ jobs:
         run: docker build . --file Dockerfile --tag Barath-NS/docker-demo:1.0
 
       - name: Push the Docker image
-        run: docker push Barath-NS/docker-demo:1.0
+        run: run: docker push docker.io/Barath-NS/docker-demo:1.0
+
 
