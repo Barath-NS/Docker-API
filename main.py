@@ -22,10 +22,6 @@ class UpdateStudents(BaseModel):
     age: Optional[int]=None
     year: Optional[str]=None
 
-@app.get("/")
-def index():
-    return {"name": "First Data"}
-
 @app.get("/{student_id}")  # Corrected
 def get_student(student_id: int = Path(..., description="The ID of the student")):
     return students[student_id]
